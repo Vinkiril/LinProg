@@ -37,15 +37,19 @@ vector<vector<double> > Jardan(vector<vector<double> >arr){
     cin>>s;
     for (int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if((i==k)&&(j==s))
-                jardArr[i][j]=1/arr[k][s];
-            if((i==k)&&(j!=s))
-                jardArr[i][j]=arr[i][j]/arr[k][s];
-            if((i!=k)&&(j==s))
-                jardArr[i][j]=arr[i][j]/arr[k][s]*(-1);
-            if((i!=k)&&(j!=s))//need fix
+
+            if((i!=k)&&(j!=s))
                 jardArr[i][j]=(arr[i][j]*arr[k][s]-arr[i][s]*arr[k][j])/arr[k][s];
-        }
+            else
+            {
+                if((i!=k)&&(j==s))
+                jardArr[i][j]=arr[i][j]/arr[k][s]*(-1);
+                if((i==k)&&(j!=s))
+                jardArr[i][j]=arr[i][j]/arr[k][s];
+                if((i==k)&&(j==s))
+                jardArr[i][j]=1/arr[k][s];
+            }
+         }
     }
     return jardArr;
 }
