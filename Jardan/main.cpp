@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include "mainwindow.h"
 using namespace std;
 const int n=2;
 const int m=3;
@@ -55,9 +56,11 @@ vector<vector<double> > Jardan(vector<vector<double> >arr){
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {
 
-    output(Jardan(input(n,m)));
-    return 0;
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
