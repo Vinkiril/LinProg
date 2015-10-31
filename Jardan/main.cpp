@@ -2,25 +2,41 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
-#include "mainwindow.h"
+
 using namespace std;
-const int n=2;
-const int m=3;
-vector<vector<double> > input(int n,int m){
+int n;
+int m;
+
+vector<vector<double> > input(){
+    cout<<"Enter size matrix(x y):"<<endl;
+    cin>>n;
+    cin>>m;
 
     vector<vector<double> >arr(n,vector<double>(m));
-    cout<<"Enter array: "<<endl;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin>>arr[i][j];
+    cout<<"random?(yes/no) "<<endl;
+    string answer="";
+    cin>>answer;
+    if(answer=="yes"){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                arr[i][j]=rand()%100;
+            }
+        }
+    }
+    else{
+        cout<<"Enter array: "<<endl;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                cin>>arr[i][j];
+            }
         }
     }
 
     return arr;
+
 }
 
 void output(vector<vector <double> > arr){
-    cout<<"Array: "<<endl;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cout.precision(3);
@@ -36,6 +52,7 @@ vector<vector<double> > Jardan(vector<vector<double> >arr){
     int k,s;
     cin>>k;
     cin>>s;
+    cout<<"Selected element a["<<k<<"]["<<s<<"] = "<<arr[k][s]<<endl;
     for (int i=0;i<n;i++){
         for(int j=0;j<m;j++){
 
@@ -55,12 +72,14 @@ vector<vector<double> > Jardan(vector<vector<double> >arr){
     return jardArr;
 }
 
-
-int main(int argc, char *argv[])
+int main()
 {
 
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+    vector<vector<double> > v=input();
+    cout<<"Entered array"<<endl;
+    output(v);
+    v=Jardan(v);
+    cout<<"Jardan matrix: "<<endl;
+    output(v);
+    return 0;
 }
