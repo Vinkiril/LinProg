@@ -9,13 +9,10 @@ QT       += core
 QT       -= gui
 
 TARGET = Jardan
+CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 
 SOURCES += main.cpp
-
-FORMS +=
-
-HEADERS +=
