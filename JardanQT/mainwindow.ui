@@ -33,7 +33,11 @@
        <number>0</number>
       </property>
       <item row="1" column="0">
-       <widget class="QLineEdit" name="EditRow"/>
+       <widget class="QLineEdit" name="EditRow">
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0" colspan="2">
        <widget class="QPushButton" name="ButtonCreate">
@@ -78,12 +82,22 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="EditColumn"/>
+       <widget class="QLineEdit" name="EditColumn">
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
+        </property>
+       </widget>
       </item>
       <item row="3" column="0" colspan="2">
        <widget class="QTableWidget" name="tableWidget">
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>200</number>
+        </attribute>
         <attribute name="verticalHeaderDefaultSectionSize">
-         <number>50</number>
+         <number>100</number>
         </attribute>
        </widget>
       </item>

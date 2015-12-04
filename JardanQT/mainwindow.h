@@ -19,6 +19,8 @@ public:
 private slots:
     void on_ButtonCreate_clicked();
 
+    void on_ButtonJardan_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

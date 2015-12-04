@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    jardan.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    jardan.h
 
 FORMS    += mainwindow.ui
