@@ -58,15 +58,19 @@ int Jardan::selectColumn(int STB){
 }
 
 void Jardan::jardArr(){
-
-    vector<vector<double> >jardArr(n,vector<double>(m)); //отжарденный массив
-    cout<<"select column:  [j] (j>0)"<<endl;
-    int k,s;
+    string ans="";
     do{
+    vector<vector<double> >jardArr(n,vector<double>(m)); //отжарденный массив
+    //cout<<"select column:  [j] (j>0)"<<endl;
+    cout<<"select [i] [j] (0..n)"<<endl;
+    int k,s;
+    //do{
+    cin>>k;
     cin>>s;                                                 //выбираем столбец
 
-    }while(s==0);
-    k=selectColumn(s);                                 // cтрока выбирается автоматически
+    //}while(s==0);
+    //k=selectColumn(s);                                 // cтрока выбирается автоматически
+
     cout<<"Selected element a["<<k<<"]["<<s<<"] = "<<arr[k][s]<<endl;
     for (int i=0;i<n;i++){
         for(int j=0;j<m;j++){
@@ -85,13 +89,20 @@ void Jardan::jardArr(){
          }
     }
     arr=jardArr;
+
+
+
+    output();
+    cout<<"again? yes/no"<<endl;
+    cin>>ans;
+
+    }while(ans=="yes");
 }
+
 
 Jardan::Jardan()
 {
     input();
-    output();
-    jardArr();
     output();
 }
 
