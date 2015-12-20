@@ -7,24 +7,25 @@ using namespace std;
 
 int main()
 {
-    jardan m;
+    jardan matrix;
+    size_t n,m;
 
+    cout<<"Enter size matrix(N x M): "<<endl;
+    cin>>n;
+    cin>>m;
+    matrix.setSize(n,m);
+    matrix.print();
 
-        m.setSize(10,8);
-        m.print();
+    std::cout << std::endl << "==========================" << std::endl;
 
-        std::cout << std::endl << "==========================" << std::endl;
+    matrix.hideColumn(0);
+    matrix.print();
 
-        m.hideColumn(4);
-        m.print();
+/*    std::cout << std::endl << "==========================" << std::endl;
 
-        std::cout << std::endl << "==========================" << std::endl;
-
-        m.hideColumn(0);
-        m.print();
-
-        return 0;
-
+    matrix.hideColumn(6);
+    matrix.print();
+*/
     return 0;
 }
 

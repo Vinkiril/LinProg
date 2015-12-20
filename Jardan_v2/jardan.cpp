@@ -2,16 +2,19 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
-
-void jardan::setSize (size_t rowsCount, size_t columnsCount)
+#include <stdexcept>
+void jardan::setSize (size_t rowsCount, size_t columnsCount)    //размеры матрицы и её заполнение
 {
+    double elem;
     this->rowsCount = rowsCount;
     this->columnsCount = columnsCount;
 
     data.resize(rowsCount*columnsCount);        //создаем матрицу нужного рамера.
+    cout<<"Enter element matrix: "<<endl;
     for (size_t id = 0; id < data.size(); ++id)
     {
-        data[id] = 0;
+        cin>>elem;
+        data[id] = elem;
         //data[id] = id;
     }
 }
@@ -19,7 +22,7 @@ void jardan::setSize (size_t rowsCount, size_t columnsCount)
 size_t jardan::getId(size_t r, size_t c)
     {
         if (r >= rowsCount) throw std::runtime_error("r >= rowsCount");
-        if (c >= columnsCount) throw std::runtime_error("c >= columnsCount");
+        if (c >= columnsCount) throw runtime_error("c >= columnsCount");
 
         return r*columnsCount + c;
     }
@@ -43,6 +46,7 @@ void jardan::print()
             cout << endl;
         }
     }
+
 double jardan::getElement (size_t r, size_t c)
     {
         return data[getId(r, c)];
